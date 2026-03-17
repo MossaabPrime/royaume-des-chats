@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Royaume des Chats Étoilés</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ░░ SCREEN 0 — NOM ░░ -->
+  <div id="screen-name" class="screen active">
+    <div class="stars-layer"></div>
+    <div class="title-card">
+      <span class="title-cat">🐱</span>
+      <h1 class="game-title">Le Royaume des<br><span>Chats Étoilés</span></h1>
+      <p class="game-sub">Une aventure de mystère et d'amour doux</p>
+      <div class="name-form">
+        <label for="player-name">Ton prénom</label>
+        <input type="text" id="player-name" placeholder="Entre ton prénom..." maxlength="20" autocomplete="off">
+        <button id="btn-start-name" class="btn-primary">Continuer →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ░░ SCREEN 1 — FORMAT ░░ -->
+  <div id="screen-format" class="screen">
+    <div class="stars-layer"></div>
+    <div class="format-card">
+      <p class="step-label">✦ Choix du style</p>
+      <h2 class="format-title">Comment veux-tu vivre l'histoire ?</h2>
+      <div class="format-options">
+
+        <button class="format-btn" data-format="vn">
+          <div class="fmt-preview fmt-vn">
+            <div class="fp-char">🐱</div>
+            <div class="fp-box"></div>
+          </div>
+          <strong>Visual Novel</strong>
+          <span>Personnage à droite, dialogue en bas</span>
+        </button>
+
+        <button class="format-btn" data-format="cin">
+          <div class="fmt-preview fmt-cin">
+            <div class="fp-sky">🌙</div>
+            <div class="fp-bar"></div>
+          </div>
+          <strong>Cinématique</strong>
+          <span>Image plein écran, texte en bas</span>
+        </button>
+
+        <button class="format-btn" data-format="split">
+          <div class="fmt-preview fmt-split">
+            <div class="fp-left">🐾</div>
+            <div class="fp-right"></div>
+          </div>
+          <strong>Split Screen</strong>
+          <span>Illustration à gauche, texte à droite</span>
+        </button>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ░░ SCREEN 2 — JEU ░░ -->
+  <div id="screen-game" class="screen">
+
+    <!-- VN -->
+    <div id="layout-vn" class="layout">
+      <div class="vn-bg" id="vn-bg"></div>
+      <div class="vn-char-wrap">
+        <div id="vn-char"></div>
+      </div>
+      <div class="vn-panel">
+        <div id="vn-speaker"></div>
+        <div id="vn-text"></div>
+        <div id="vn-choices"></div>
+        <div id="vn-next" class="next-indicator">▼ Cliquer pour continuer</div>
+      </div>
+    </div>
+
+    <!-- CINEMATIC -->
+    <div id="layout-cin" class="layout">
+      <div class="cin-bg" id="cin-bg"></div>
+      <div class="cin-char-wrap"><div id="cin-char"></div></div>
+      <div class="cin-vignette"></div>
+      <div class="cin-panel">
+        <div id="cin-speaker"></div>
+        <div id="cin-text"></div>
+        <div id="cin-choices"></div>
+        <div id="cin-next" class="next-indicator">▼ Continuer</div>
+      </div>
+    </div>
+
+    <!-- SPLIT -->
+    <div id="layout-split" class="layout">
+      <div class="spl-left">
+        <div id="spl-char"></div>
+        <div id="spl-location"></div>
+      </div>
+      <div class="spl-right">
+        <div id="spl-speaker"></div>
+        <div id="spl-text"></div>
+        <div id="spl-choices"></div>
+        <div id="spl-next" class="next-indicator">▼ Continuer</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ░░ SCREEN 3 — FIN ░░ -->
+  <div id="screen-end" class="screen">
+    <div class="stars-layer"></div>
+    <div class="end-card">
+      <div class="end-icon">🌙</div>
+      <h2 class="end-title">Une Belle Nuit</h2>
+      <p class="end-quote" id="end-quote"></p>
+      <p class="end-body"  id="end-body"></p>
+      <button class="btn-primary" id="btn-replay">↺ Rejouer depuis le début</button>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
